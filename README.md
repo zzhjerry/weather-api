@@ -69,7 +69,10 @@ virtualenv -p python3 .env
 source .env/bin/activate
 
 # install dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
+
+# you do need to source again to adopt newly install local gunicorn command
+source .env/bin/activate
 
 # start local server on 127.0.0.1:8000
 gunicorn 'app.api:get_app()'
